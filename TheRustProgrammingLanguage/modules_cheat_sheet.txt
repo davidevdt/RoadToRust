@@ -1,0 +1,26 @@
+* Start from crate root: crate root file = src/lib.rs (library crate) or src/main.rs (binary crate)
+
+* Declaring modules: in crate root file you declare mod module_name; and the compiler will look for the module's code in 
+ these places: 
+    -> inline, with curly brackets replacing the semicolon following mode module_name  
+    -> in src/module_name.rs 
+    -> in src/module_name/mod.rs 
+
+* Declaring submodules: submoduels can be created in other files other than the crate root. E.g., mod sub_module_name; in 
+src/module_name.rs . The compiler will look for the submodule in the following places: 
+    -> inline, replacing the semicolon with curly braces after mod sub_module_name 
+    -> in src/module_name/sub_module_name.rs 
+    -> in src/module_name/sub_module_name/mod.rs 
+
+* Paths to code in module: as long as the privacy rules allow, it is possible to refer to a module's code anywhere in the crate by 
+ using its path; e.g. crate::module_name::module_sub_name::Custom_Type_In_Submodule . 
+
+ * Private vs. public: code in a module is private to private modules by default. To make it public, declare it pub mod rather
+  than just mod. To make items in a public module also public, declare the items with pub 
+
+  * The use keywork: "use" creates shortcuts to long paths' items. E.g. for 
+  crate::module_name::module_sub_name::Custom_Type_In_Submodule you can just use Custom_Type_In_Submodule by typing
+  use crate::module_name::module_sub_name::Custom_Type_In_Submodule
+
+See example in the "backyard" and "restaurant" Cargo projects 
+

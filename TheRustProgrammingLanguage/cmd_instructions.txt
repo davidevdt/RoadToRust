@@ -1,0 +1,73 @@
+# Install:
+$ curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh 
+
+# Check version and path: 
+$ rustc --version 
+$echo $PATH 
+
+# Update
+$ rustup update 
+
+# Uninstall 
+rustup self uninstall 
+
+# Compile file: 
+$ rustc file_name.rs 
+
+# Run file: 
+$ ./file_name 
+
+# Cechk Cargo installation: 
+$ cargo --version 
+
+# Create Cargo project: 
+$ cargo new project_name 
+$ cargo new project_name new --vcs=git  # -> if built on existing Git repo and want to force creating Git files 
+
+# Build and run from project: 
+$ cd project_name 
+$ cargo build                   # -> Compile 
+$ ./target/debug/file_name      # -> Run (file with main)
+$ cargo run                     # -> Run from project 
+
+# Check code compilation without producing executable: 
+cargo check 
+
+# Build for release 
+cargo build --release 
+
+# Build from Git repo 
+$ git clone <repo_url>/projectname 
+$ cd projectname
+$ cargo build 
+
+# Create library project (it will create test functions)
+$ cargo new project_name --lib 
+
+# Run all tests in the suite 
+$ cargo test 
+
+# Options for testing 
+$ cargo test --help 
+$ cargo test -- --help 
+
+# Run tests single-thread (not the default behaviour)
+$ cargo test -- --test-threads=1
+
+# Shows function output
+$ cargo test -- --show-output
+
+// Run only one test by name 
+$ cargo test test_function_name
+
+// Run only tests whose function contain name_part in their name  
+$ cargo test name_part 
+
+// Run ignored tests 
+$ cargo test -- --ignored
+
+// Run all tests independently on whether they are ignored 
+$ cargo test -- --include-ignored
+
+// Run tests in integration_test file [which is in tests folder]
+$ cargo test --test integration_test

@@ -1,0 +1,9 @@
+* The rustonomicon: https://doc.rust-lang.org/nomicon/intro.html
+* asynchronous programming in Rust: https://rust-lang.github.io/async-book/
+* networking: https://www.rust-lang.org/what/networking
+* rust by example: https://doc.rust-lang.org/rust-by-example/index.html
+* rust cookbook: https://rust-lang-nursery.github.io/rust-cookbook/intro.html
+* the rust reference: https://doc.rust-lang.org/reference/introduction.html
+* test (Rust unstable book) https://doc.rust-lang.org/unstable-book/library-features/test.html
+* the Cargo book: https://doc.rust-lang.org/cargo/
+* the little book of Rust macros: https://veykril.github.io/tlborm/
